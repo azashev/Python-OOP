@@ -1,5 +1,6 @@
 from pokemon import Pokemon
 
+
 class Trainer:
     def __init__(self, name):
         self.name = name
@@ -23,10 +24,8 @@ class Trainer:
         return f"You have released {pokemon_name}"
 
     def trainer_data(self):
-        result = []
+        result = [f"Pokemon Trainer {self.name}", f"Pokemon count {len(self.pokemons)}"]
 
-        result.append(f"Pokemon Trainer {self.name}")
-        result.append(f"Pokemon count {len(self.pokemons)}")
         [result.append(f"- {x.pokemon_details()}") for x in self.pokemons]
 
         return '\n'.join(result)
