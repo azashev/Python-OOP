@@ -11,3 +11,22 @@ class Point:
 
     def __str__(self):
         return f"The point has coordinates ({self.x},{self.y})"
+
+
+# Create a class called Point. Upon initialization, it should receive x and y (numbers). Create 3 instance methods:
+# - set_x(new_x) - changes the x value of the point
+# - set_y(new_y) - changes the y value of the point
+# -	__str__() - returns the coordinates of the point in the format "The point has coordinates ({x},{y})"
+#
+#
+# Test code:
+p = Point(2, 4)
+print(p)
+p.set_x(3)
+p.set_y(5)
+print(p)
+
+#
+# Expected output:
+# The point has coordinates (2,4)
+# The point has coordinates (3,5)
