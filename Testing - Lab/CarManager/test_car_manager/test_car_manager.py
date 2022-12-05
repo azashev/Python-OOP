@@ -43,7 +43,7 @@ class TestCarManager(TestCase):
 
         self.assertEqual("Fuel amount cannot be negative!", str(ex.exception))
 
-    def test_correct_refuel(self):
+    def test_correct_refuel_with_more_fuel_than_capacity(self):
         self.car.refuel(200)
 
         self.assertEqual(150, self.car.fuel_amount)
