@@ -46,7 +46,7 @@ class TestCarManager(TestCase):
     def test_correct_refuel_with_more_fuel_than_capacity(self):
         self.car.refuel(200)
 
-        self.assertEqual(150, self.car.fuel_amount)
+        self.assertEqual(self.car.fuel_amount, self.car.fuel_capacity)
 
     def test_incorrect_refuel_zero_or_less_raise_exception(self):
         with self.assertRaises(Exception) as ex:
@@ -54,7 +54,7 @@ class TestCarManager(TestCase):
 
         self.assertEqual("Fuel amount cannot be zero or negative!", str(ex.exception))
 
-    def test_drive_correct(self):
+    def test_drive_valid_distance(self):
         self.car.fuel_amount = 100
         self.car.drive(20)
 
